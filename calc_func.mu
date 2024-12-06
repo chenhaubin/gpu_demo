@@ -41,7 +41,7 @@ __device__ double single_calc(
     
     int t6 = 0;
     int * t7 = (int*)malloc(sizeof(int) * (i2 + 1));
-    f2(
+    my_f2(
         t1,
         t4,
         t5,

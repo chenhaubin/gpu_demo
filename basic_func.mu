@@ -323,7 +323,7 @@ __device__ int f6(
 	return 0;
 }
 
-__device__  int f2(
+__device__  int my_f2(
 	int i1,
 	int i2,
 	int i3,
@@ -415,7 +415,7 @@ __device__ double f3(
 	return t2;
 }
 
-__device__ int  f4(
+__device__ int  my_f4(
 	int i1,
 	int i2,
 	int* i3,
@@ -456,7 +456,7 @@ __device__  int f5(
 	}
 	int t3 = 0;
 	int t4 = 0;
-    f4(
+    my_f4(
         i1,
         i3,
         i6,
