@@ -1,4 +1,4 @@
-#include "cuda_runtime.h"
+#include "musa_runtime.h"
 #include "device_launch_parameters.h"
 #include "basic_func.h"
 #include <stdlib.h>
@@ -125,98 +125,98 @@ extern "C" int  batch_calc(
     int *dev_i8    =NULL;
     bool* dev_b1 =NULL;
     double * dev_d3 = NULL;
-    cudaError_t cudaStatus;
+    musaError_t cudaStatus;
     
-    cudaStatus  = cudaMalloc((void**)&dev_i3, i2 * sizeof(int));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_i3, i2 * sizeof(int));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_i3\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_i3, i3, i2  * sizeof(int), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_i3, i3, i2  * sizeof(int), musaMemcpyHostToDevice);
     
     
-    cudaStatus  = cudaMalloc((void**)&dev_i4, i2 * sizeof(int));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_i4, i2 * sizeof(int));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_i4\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_i4, i4, i2  * sizeof(int), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_i4, i4, i2  * sizeof(int), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_i5, i2 * sizeof(int));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_i5, i2 * sizeof(int));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_i5\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_i5, i5, i2  * sizeof(int), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_i5, i5, i2  * sizeof(int), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_i6, i2 * sizeof(int));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_i6, i2 * sizeof(int));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_i6\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_i6, i6, i2  * sizeof(int), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_i6, i6, i2  * sizeof(int), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_i7, i2 * sizeof(int));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_i7, i2 * sizeof(int));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_i7\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_i7, i7, i2  * sizeof(int), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_i7, i7, i2  * sizeof(int), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_d1, i2 * sizeof(double));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_d1, i2 * sizeof(double));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_d1\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_d1, d1, i2  * sizeof(double), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_d1, d1, i2  * sizeof(double), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_d2, i2 * sizeof(double));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_d2, i2 * sizeof(double));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_d2\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_d2, d2, i2  * sizeof(double), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_d2, d2, i2  * sizeof(double), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_i8, i9 * sizeof(int));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_i8, i9 * sizeof(int));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_i8\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_i8, i8, i9  * sizeof(int), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_i8, i8, i9  * sizeof(int), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_b1, i9 * sizeof(bool));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_b1, i9 * sizeof(bool));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_b1\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemcpy(dev_b1, b1, i9  * sizeof(bool), cudaMemcpyHostToDevice);
+    musaMemcpy(dev_b1, b1, i9  * sizeof(bool), musaMemcpyHostToDevice);
     
-    cudaStatus  = cudaMalloc((void**)&dev_d3, i2 * sizeof(double));                   
-    if(cudaStatus != cudaSuccess )                                                                         
+    cudaStatus  = musaMalloc((void**)&dev_d3, i2 * sizeof(double));                   
+    if(cudaStatus != musaSuccess )                                                                         
     {                                                                                                      
-        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",cudaGetErrorString(cudaStatus));                        
+        printf("\ncudaMalloc CU_FAILed!<<<%s>>>\n",musaGetErrorString(cudaStatus));                        
         printf("Error:<%s,%s,%d>  dev_d4\n",__FILE__,__FUNCTION__,__LINE__ );               
         goto Error;                                                                                        
     }                                                                                                      
-    cudaMemset(dev_d3, 0x00, i2  * sizeof(double));
+    musaMemset(dev_d3, 0x00, i2  * sizeof(double));
     
     calc_ken<<< i2,1>>>(
         i1, 
@@ -232,20 +232,20 @@ extern "C" int  batch_calc(
         i9,
         dev_d3);
     
-    cudaMemcpy(d3, dev_d3, i2 * sizeof(double), cudaMemcpyDeviceToHost);
+    musaMemcpy(d3, dev_d3, i2 * sizeof(double), musaMemcpyDeviceToHost);
 Error:
-    cudaFree(dev_i3);
-    cudaFree(dev_i4);
-    cudaFree(dev_i5);
-    cudaFree(dev_i6);
-    cudaFree(dev_i7);
-    cudaFree(dev_d1);
+    musaFree(dev_i3);
+    musaFree(dev_i4);
+    musaFree(dev_i5);
+    musaFree(dev_i6);
+    musaFree(dev_i7);
+    musaFree(dev_d1);
     
-    cudaFree(dev_d2);
-    cudaFree(dev_d3);
-    cudaFree(dev_i8);
+    musaFree(dev_d2);
+    musaFree(dev_d3);
+    musaFree(dev_i8);
     
-    cudaFree(dev_b1);
+    musaFree(dev_b1);
     return 0;
 }
 

@@ -1,4 +1,4 @@
-#include "cuda_runtime.h"
+#include "musa_runtime.h"
 #include "device_launch_parameters.h"
 
 
